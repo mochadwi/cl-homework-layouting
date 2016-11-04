@@ -22,5 +22,21 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        nama = getIntent().getStringExtra("Nama");
+        email = getIntent().getStringExtra("Email");
+        hp = getIntent().getStringExtra("Handphone");
+
+        initView();
+
+        txtNama.setText(nama);
+        txtEmail.setText(email);
+        txtHp.setText(hp);
+    }
+
+    private void initView() {
+        txtNama = (TextView) findViewById(R.id.txt_name);
+        txtEmail = (TextView) findViewById(R.id.txt_email);
+        txtHp = (TextView) findViewById(R.id.txt_phone);
     }
 }
